@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
 
-out = open("grap_data_1k.csv",'a+')
+out = open("grap_data_0407.csv",'a+')
 out.write("data_size,gap_num,high index,low index, high wave duration mean, high wave duration median, low wave duration mean,low wave duration median,bandwith\n")
 
-file_name = "data_4_7"
+file_name = "data_4_7_2"
 
 list_data = ["sss"*10]
 

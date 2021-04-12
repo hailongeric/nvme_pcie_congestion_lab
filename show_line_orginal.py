@@ -2,6 +2,7 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
+#from scipy.io import savemat
 
 print(sys.argv[1])
 filename = sys.argv[1]
@@ -21,7 +22,10 @@ x1, y1 =[], []
 #for i in range(900000, 900500):
 for i in range(10000, len(data)):
     t += data[i]
+    if data[i] > 1.27341e-6 or data[i] < 1.15199e-6:   # noise filtration   data may be modify
+        continue
     x1.append(t)
+    # y1.append(data[i])
     if k != INTERVAL_SIZE-1:
         k += 1
         y1.append(data[i]) 
@@ -38,6 +42,14 @@ for i in range(10000, len(data)):
 fig = plt.figure(1)
 ax = fig.add_subplot(111)
 #ax.plot(x1[8000:-60000],y1[8000:-60000])
+# mat_x = np.array(x1[50000:60000])
+# mat_y = np.array(y1[50000:60000])
+# mdic = {"time":mat_x, "response_time":mat_y}
+# savemat("{}.mat".format(filename.split('.')[0]), mdic)
 ax.plot(x1,y1,linewidth=0.15)
+
 plt.show()
+
+
+
 

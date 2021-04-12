@@ -7,8 +7,8 @@ from multiprocessing import Lock
 
 fence_divation = 1.6e-5 # TODO
 split_value = 1.1998e-6  # TODO
-high_wave_range = [0.94e-4, 1.939e-3] # TODO
-low_wave_range = [0.94e-4, 1.939e-3] # TODO
+high_wave_range = [0.91e-4, 1.939e-3] # TODO
+low_wave_range = [0.91e-4, 1.939e-3] # TODO
 INTERVAL_SIZE =50
 
 
@@ -16,8 +16,8 @@ def solve_data(data_size,gap_num,per_size,lock):
     flag_litter_or_big = 0 # TODO [0 1 2]       
     last_number = 0 # TODO
     interval_list = []
-
-    filename = "data__{}_{}_{}.log".format(data_size,gap_num,per_size)
+ #time_line_400_16_2
+    filename = "time_line_{}_{}_{}.log".format(data_size,gap_num,per_size)
     try:
         raw_data = numpy.loadtxt(filename)
     except IOError:
